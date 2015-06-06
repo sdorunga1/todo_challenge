@@ -9,11 +9,19 @@
   </head>
   <body ng-controller="TodoCtrl as ctrl">
     <ul>
-      <li ng-repeat="task in ctrl.tasks">
+      <li ng-repeat="task in ctrl.tasks | filter:isApplicable()">
+        <input type="checkbox" ng-model="task.done">
         {{task.title}}
+        <button ng-click="ctrl.removeTask(task.title)">
       </li>
     </ul>
     <input type="text" name="task" id="task" placeholder="Add a task description" ng-model="ctrl.newTask"/>
     <button ng-click="ctrl.addTask()">Add Task</button>
+    <ul>
+      <li><a href="#" ng-click="ctrl.updateFilter('')">All</a></li>
+      <li><a href="#" ng-click="ctrl.updateFilter(false)">Active</a></li>
+      <li><a href="#" ng-click="ctrl.updateFilter(true)">Completed</a></li>
+      <li><a href="#" ng-click="ctrl.clearAllTasks()">Clear All</a></li>
+    </ul>
   </body>
 </html>
