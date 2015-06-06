@@ -4,7 +4,7 @@
   "description": "Todo App Challenege",
   "main": "conf.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js && protractor conf.js"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
