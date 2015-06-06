@@ -14,7 +14,8 @@ describe("Controller: TodoCtrl", function(){
   });
 
   it("when adding a task", function(){
-    ctrl.addTask("New Task");
+    ctrl.newTask = "New Task";
+    ctrl.addTask();
     expect(ctrl.tasks).toEqual([{title: "New Task"}]);
   });
 });
